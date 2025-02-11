@@ -1,14 +1,43 @@
 import { Link } from "expo-router";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import Lab3 from "./lab_3/page";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center gap-4 p-6">
-      <h1 className="text-2xl font-bold">Welcome to the Lab</h1>
-      <Link href="/lab_3">
-        <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
-          Go to Lab 3
-        </button>
+    <View style={styles.container}>
+      <Text style={styles.title}>Welcome to the Lab</Text>
+      <Link href="./lab_3/page" asChild>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Go to Lab 3</Text>
+        </TouchableOpacity>
       </Link>
-    </div>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
+    backgroundColor: "#F5F5F5",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: "#3B82F6", // Tailwind 'blue-500'
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 10,
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+});

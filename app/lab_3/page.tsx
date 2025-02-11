@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
+import { View, Text, Button, StyleSheet } from "react-native";
 import IncrementButton from "../../components/IncrementButton";
 import DecrementButton from "../../components/DecrementButton";
 
@@ -11,14 +12,33 @@ const Lab3 = () => {
   const decrement = () => setCount(prev => prev - 1);
 
   return (
-    <div className="flex flex-col items-center gap-4 p-6">
-      <h1 className="text-2xl font-bold">Counter: {count}</h1>
-      <div className="flex gap-4">
+    <View style={styles.container}>
+      <Text style={styles.counterText}>Counter: {count}</Text>
+      <View style={styles.buttonContainer}>
         <IncrementButton increment={increment} />
         <DecrementButton decrement={decrement} />
-      </div>
-    </div>
+      </View>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
+    backgroundColor: "#f5f5f5",
+  },
+  counterText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    gap: 10,
+  },
+});
 
 export default Lab3;
