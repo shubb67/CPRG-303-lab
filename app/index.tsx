@@ -1,12 +1,12 @@
 import { Link } from "expo-router";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import Lab3 from "./lab_3/page";
+import Lab3 from "./lab_3";
 
 export default function Home() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to the Lab</Text>
-      <Link href="./lab_3/page" asChild>
+      <Link href="./lab_3/" asChild>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Go to Lab 3</Text>
         </TouchableOpacity>
