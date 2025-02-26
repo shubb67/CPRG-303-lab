@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to the Lab</Text>
-      <Link href="./lab_3/" asChild>
+      <Link href="./lab_4/" asChild>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Go to Lab 3</Text>
+          <Text style={styles.buttonText}>Go to Lab 4</Text>
         </TouchableOpacity>
       </Link>
     </View>
